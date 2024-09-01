@@ -6,7 +6,7 @@
 
 ###### ``SGLStack.hpp``:
 
-Single Global Lock stack. A standard thread-safe stack using mutexes to block
+Single Global Lock stack. A standard thread-safe stack using mutexes to block.
 
 ###### ``FCStack.hpp``:
 
@@ -25,7 +25,7 @@ Treiber Stack that implements elimintation as an optimization
 
 ###### ``SGLQueue.hpp``:
 
-    Single Global Lock queue. A standard thread-safe queue using mutexes to block
+Single Global Lock queue. A standard thread-safe queue using mutexes to block.
 
 ###### ``FCQueue.hpp``:
 
