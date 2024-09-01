@@ -6,19 +6,19 @@
 
 ###### SGLStack: 
 
-    Single Global Lock stack. A standard thread-safe stack using mutexes to block
+Single Global Lock stack. A standard thread-safe stack using mutexes to block
 
 ###### FCStack:
 
-    SGL Stack that implements flat-combining as an optimization
+SGL Stack that implements flat-combining as an optimization
 
 ###### ElimSGLStack:
 
-    SGL Stack that implements elimination as an optimization
+SGL Stack that implements elimination as an optimization
 
 ###### ElimTStack:
 
-    Treiber Stack that implements elimintation as an optimization
+Treiber Stack that implements elimintation as an optimization
 
 
 #### Queues:
@@ -29,7 +29,7 @@
 
 ###### FCQueue:
 
-    SGL Queue that implements flat-combining as an optimization
+SGL Queue that implements flat-combining as an optimization
 
 
 ## Lock-Free Implementations:
@@ -38,14 +38,14 @@
 
 ###### TStack:
 
-    Treiber Stack implementation. A thread-safe, lock-free stack
+Treiber Stack implementation. A thread-safe, lock-free stack
 
 
 #### Queues:
 
 ###### MSQueue:
 
-    Michael & Scott queue implementation. A thread-safe, lock-free queue.
+Michael & Scott queue implementation. A thread-safe, lock-free queue.
 
 
 # TODO:
