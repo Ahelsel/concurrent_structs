@@ -4,30 +4,30 @@
 
 #### Stacks:
 
-###### SGLStack: 
+###### ``SGLStack.hpp``:
 
 Single Global Lock stack. A standard thread-safe stack using mutexes to block
 
-###### FCStack:
+###### ``FCStack.hpp``:
 
 SGL Stack that implements flat-combining as an optimization
 
-###### ElimSGLStack:
+###### ``ElimSGLStack.hpp``:
 
 SGL Stack that implements elimination as an optimization
 
-###### ElimTStack:
+###### ``ElimTStack.hpp``:
 
 Treiber Stack that implements elimintation as an optimization
 
 
 #### Queues:
 
-###### SGLQueue:
+###### ``SGLQueue.hpp``:
 
     Single Global Lock queue. A standard thread-safe queue using mutexes to block
 
-###### FCQueue:
+###### ``FCQueue.hpp``:
 
 SGL Queue that implements flat-combining as an optimization
 
@@ -36,14 +36,14 @@ SGL Queue that implements flat-combining as an optimization
 
 #### Stacks:
 
-###### TStack:
+###### ``TStack.hpp``:
 
 Treiber Stack implementation. A thread-safe, lock-free stack
 
 
 #### Queues:
 
-###### MSQueue:
+###### ``MSQueue.hpp``:
 
 Michael & Scott queue implementation. A thread-safe, lock-free queue.
 
