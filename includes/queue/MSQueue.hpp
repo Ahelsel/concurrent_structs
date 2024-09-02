@@ -49,10 +49,12 @@ class MSQueue {
                 t = tail.load(); e = t->next.load();
                 if (t == tail.load()) {
                     Node *null_node = nullptr;
-                    if (e==NULL && t->next.compare_exchange_strong(null_node, n)) 
+                    if (e==NULL && t->next.compare_exchange_strong(null_node, n)) {
                         break;
-                    else if (e != NULL) 
+                    }
+                    else if (e != NULL) {
                         tail.compare_exchange_strong(t, e);
+                    } 
                 }
             }
             tail.compare_exchange_strong(t, n);
@@ -64,15 +66,18 @@ class MSQueue {
                 h=head.load(); t=tail.load(); n=h->next.load();
                 if (h==head.load()) {
                     if (h==t) {
-                        if (n==NULL) 
+                        if (n==NULL) {
                             return std::nullopt;
-                        else 
+                        }
+                        else {
                             tail.compare_exchange_strong(t, n);
+                        }
                     }
                     else {
                         int ret=n->val;
-                        if (head.compare_exchange_strong(h, n)) 
+                        if (head.compare_exchange_strong(h, n)) {
                             return ret;
+                        }
                     }
                 }
             }

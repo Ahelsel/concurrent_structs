@@ -37,14 +37,16 @@ class Elimination_TStack {
             // try pushing normally
             t = top.load();
             n->down.store(t);
-            if (top.compare_exchange_strong(t, n))
+            if (top.compare_exchange_strong(t, n)) {
                 return;
+            }
             
             // else, try elimination
             int slot = rand() % elim_arr_size;
             t = elim_arr[slot].load();
-            if (t == nullptr && elim_arr[slot].compare_exchange_strong(t, n))
-                    elim_success = true;
+            if (t == nullptr && elim_arr[slot].compare_exchange_strong(t, n)) {
+                elim_success = true;
+            }
 
             // try push normally
             if (!elim_success) {
@@ -73,8 +75,9 @@ class Elimination_TStack {
             // regular pop 
             do {
                 t = top.load();
-                if (t == nullptr)
+                if (t == nullptr) {
                     return std::nullopt;
+                }
                 n = t->down.load();
                 val = t->val;
             } while (!top.compare_exchange_strong(t, n));

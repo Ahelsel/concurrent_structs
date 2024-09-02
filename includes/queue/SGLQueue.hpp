@@ -36,8 +36,9 @@ class SGLQueue {
         void push(T val) {
             mtx.lock();
             Node* node = new Node(val);
-            if (back == nullptr)
+            if (back == nullptr) {
                 front = back = node;
+            }
             else {
                 back->next = node;
                 back = node;
@@ -54,8 +55,9 @@ class SGLQueue {
             Node* temp = front;
             T val = temp->data;
             front = front->next;
-            if (front == nullptr)
+            if (front == nullptr) {
                 back = nullptr;
+            }
             delete temp;
             mtx.unlock();
             return val;

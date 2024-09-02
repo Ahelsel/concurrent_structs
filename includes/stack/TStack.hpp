@@ -39,8 +39,9 @@ class TStack {
             int v;
             do {
                 t = top.load(ACQUIRE);
-                if (t == NULL)
+                if (t == NULL) {
                     return std::nullopt;
+                }
                 n = t->down.load();
                 v = t->val;
             } while (!top.compare_exchange_strong(t,n,ACQ_REL));
