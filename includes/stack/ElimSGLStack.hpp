@@ -1,6 +1,8 @@
 #ifndef ELIMSGLSTACK_H
 #define ELIMSGLSTACK_H
 
+#pragma once
+
 #include <atomic>
 #include <cstdlib>
 #include <mutex>

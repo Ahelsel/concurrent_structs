@@ -1,6 +1,8 @@
 #ifndef ELIMTSTACK_H
 #define ELIMTSTACK_H
 
+#pragma once
+
 #include <atomic>
 #include <cstdlib>
 #include <optional>

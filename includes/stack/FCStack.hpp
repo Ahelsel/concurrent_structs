@@ -1,6 +1,8 @@
 #ifndef FCSTACK_H
 #define FCSTACK_H
 
+#pragma once
+
 #include <atomic>
 #include <mutex>
 #include <optional>
@@ -23,8 +25,7 @@ class FlatCombiningStack {
         };
 
         struct Operation {
-            enum Type {PUSH,
-                       POP} opType;
+            enum Type {PUSH, POP} opType;
             std::atomic<bool> completed;
             std::optional<T> result;
             T value;

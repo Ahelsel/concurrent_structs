@@ -1,6 +1,8 @@
 #ifndef SGLSTACK_H
 #define SGLSTACK_H
 
+#pragma once
+
 #include <mutex>
 #include <optional>
 #include <sched.h>

@@ -1,6 +1,8 @@
 #ifndef SGLQUEUE_H
 #define SGLQUEUE_H
 
+#pragma once
+
 #include <mutex>
 #include <optional>
 

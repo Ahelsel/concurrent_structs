@@ -2,6 +2,17 @@
 #include <iostream>
 #include <thread>
 #include <vector>
+// Queues
+#include "../includes/queue/FCQueue.hpp"
+#include "../includes/queue/MSQueue.hpp"
+#include "../includes/queue/SGLQueue.hpp"
+// Stacks
+#include "../includes/stack/ElimSGLStack.hpp"
+#include "../includes/stack/ElimTStack.hpp"
+#include "../includes/stack/FCStack.hpp"
+#include "../includes/stack/SGLStack.hpp"
+#include "../includes/stack/TStack.hpp"
+
 
 #define NUM_THREADS 5
 #define NUM_ITERATIONS 100
@@ -9,40 +20,22 @@
 // global thread vector
 std::vector<std::thread> threads(NUM_THREADS);
 
-template <typename T>
-void put_tid(int tid, int iterations, T primitive) {
-    for (int i = 0; i < iterations; i++) {
-        primitive->put(tid);
-    }
-}
-
-
 int main() {
 
     std::cout << "Program Starting..." << std::endl;
 
-    /* create structs here */ 
+    TStack<int> stack;
 
-    for (unsigned int i = 0; i < NUM_THREADS; i++) {
-        // i + 1 == tid
-        // put_tid tells the thread to add its own tid into the shared struct
-        // NUM_ITERATIONS is how many times it will put its own tid
-        // threads[i] = std::thread(put_tid, i + 1, NUM_ITERATIONS, /* STRUCT GOES HERE */);
+    for (int i = 0; i < 10; i++) {
+        stack.push(i);
     }
 
-    for (auto& th : threads) {
-        th.join();
+    for (int i = 0; i < 10; i++) {
+        int val = stack.pop().value();
+        std::cout << "Val: " << val << std::endl;
     }
 
-    /* add print statements for testing if needed */
+    std::cout << "Finished successfully" << std::endl;
 
-    for (int i = 0; i < NUM_THREADS * NUM_ITERATIONS; i++) {
-        
-    }
-
-    /* add print statements for testing if needed */
 
 }
-
-
-

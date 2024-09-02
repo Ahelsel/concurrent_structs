@@ -10,6 +10,8 @@
 #ifndef DYNARRAY_H
 #define DYNARRAY_H
 
+#pragma once
+
 #include <cstdlib>
 #include <string>
 

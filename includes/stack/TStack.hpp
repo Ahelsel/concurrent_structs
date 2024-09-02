@@ -1,6 +1,8 @@
 #ifndef TSTACK_H
 #define TSTACK_H
 
+#pragma once
+
 #include <atomic>
 #include <optional>
 #include <sched.h>

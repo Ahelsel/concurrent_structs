@@ -1,6 +1,8 @@
 #ifndef MSQUEUE_H
 #define MSQUEUE_H
 
+#pragma once
+
 #include <atomic>
 #include <optional>
 

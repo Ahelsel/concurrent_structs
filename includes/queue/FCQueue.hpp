@@ -1,6 +1,8 @@
 #ifndef FCQUEUE_H
 #define FCQUEUE_H
 
+#pragma once
+
 #include <atomic>
 #include <mutex>
 #include <optional>
@@ -22,8 +24,7 @@ class FlatCombiningQueue {
         };
 
         struct Operation {
-            enum Type {PUSH,
-                       POP} opType;
+            enum Type {PUSH, POP} opType;
             std::atomic<bool> completed;
             std::optional<T> result;
             T value;
